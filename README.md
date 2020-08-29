@@ -5,7 +5,7 @@
 
 Provides a single pane of glass across all runtime metrics
 by recording `pprof` lookups, `runtime.MemStats` and `gopsutil` metrics, 
-and exposing them via http endpoints.
+and exposing them via http endpoints to instrument, inspect and troubleshoot an application in an idiomatic, fast and boring way.
 
 [Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/window)
 - Refresh to update the window.
@@ -13,7 +13,6 @@ and exposing them via http endpoints.
 
 ## motivation
 
-Be able to instrument, inspect and troubleshoot an application in an idiomatic, fast and boring way
 
 ## usage
 
