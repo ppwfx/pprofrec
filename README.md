@@ -1,6 +1,6 @@
 # pprofrec
 
-Provides a single pane of glass across all runtime metrics of a go process
+Provides a single pane of glass across all runtime metrics
 by recording `pprof` lookups, `runtime.MemStats` and `gopsutil` metrics
 to help understand the runtime behavior of an application.
 
