@@ -1,4 +1,5 @@
-[![GoDoc](https://godoc.org/github.com/ppwfx/pprofrec?status.svg)](https://godoc.org/github.com/ppwfx/pprofrec)[![Go Report Card](https://goreportcard.com/badge/github.com/ppwfx/pprofrec)](https://goreportcard.com/report/github.com/ppwfx/pprofrec)
+[![GoDoc](https://godoc.org/github.com/ppwfx/pprofrec?status.svg)](https://godoc.org/github.com/ppwfx/pprofrec)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ppwfx/pprofrec)](https://goreportcard.com/report/github.com/ppwfx/pprofrec)
 
 # pprofrec
 
