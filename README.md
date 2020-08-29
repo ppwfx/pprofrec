@@ -11,9 +11,6 @@ and exposing them via http endpoints to instrument, inspect and troubleshoot an 
 - Refresh to update the window.
 - Scroll on the x-axis to see more features and on the y-axis to see more data points.
 
-## motivation
-
-
 ## usage
 
 Record runtime metrics at a given frequency within a given window.
