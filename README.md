@@ -12,7 +12,7 @@ Be able to instrument, inspect and troubleshoot an application in an idiomatic, 
 
 Scroll on the x-axis to see more features, and on the y-axis to see more data points
 
-![screenshot](docs/screenshot.png)
+![screenshot](https://storage.googleapis.com/media-0/screenshot.png)
 
 ## Usage
 
