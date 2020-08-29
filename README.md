@@ -4,25 +4,21 @@ Provides a single pane of glass across all runtime metrics
 by recording `pprof` lookups, `runtime.MemStats` and `gopsutil` metrics
 to help understand the runtime behavior of an application
 
-## Motivation
+## motivation
 
 Be able to instrument, inspect and troubleshoot an application in an idiomatic, fast and boring way
 
-## Demo
+## demo
 
 [Window Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/window)
 
-- Refresh to update the window
+- Refresh to update the window.
 
-- Scroll on the x-axis to see more features and on the y-axis to see more data points
+- Scroll on the x-axis to see more features and on the y-axis to see more data points.
 
-## Screenshot
+## usage
 
-![screenshot](https://storage.googleapis.com/media-0/screenshot.png)
-
-## Usage
-
-Record runtime metrics at a given frequency within a given window
+Record runtime metrics at a given frequency within a given window.
 
 ```golang
 windowOpts := pprofrec.WindowOpts{
@@ -32,7 +28,7 @@ windowOpts := pprofrec.WindowOpts{
 mux.HandleFunc("/debug/pprof/window", pprofrec.Window(ctx, windowOpts))
 ```
 
-Stream runtime metrics at a given frequency
+Stream runtime metrics at a given frequency.
 
 ```golang
 streamOpts := pprofrec.StreamOpts{
@@ -88,8 +84,7 @@ func main() {
 }
 ```
 
-
-## Alternatives
+## similar packages
 
 [davecheney/gcvis](https://github.com/davecheney/gcvis)
 
