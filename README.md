@@ -4,17 +4,13 @@ Provides a single pane of glass across all runtime metrics
 by recording `pprof` lookups, `runtime.MemStats` and `gopsutil` metrics
 to help understand the runtime behavior of an application
 
+[Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/window)
+- Refresh to update the window.
+- Scroll on the x-axis to see more features and on the y-axis to see more data points.
+
 ## motivation
 
 Be able to instrument, inspect and troubleshoot an application in an idiomatic, fast and boring way
-
-## demo
-
-[Window Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/window)
-
-- Refresh to update the window.
-
-- Scroll on the x-axis to see more features and on the y-axis to see more data points.
 
 ## usage
 
@@ -83,10 +79,3 @@ func main() {
 	}
 }
 ```
-
-## similar packages
-
-[davecheney/gcvis](https://github.com/davecheney/gcvis)
-
-[mkevac/debugcharts](https://github.com/mkevac/debugcharts)
-
