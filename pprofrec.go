@@ -41,12 +41,15 @@ type capabilities struct {
 	memoryInfoStat bool
 }
 
+// WindowOpts configures the Window handler.
 type WindowOpts struct {
-	Window    time.Duration
+	// Window defines a window within metrics are stored.
+	Window time.Duration
+	// Frequency defines at what frequency metrics are recorded.
 	Frequency time.Duration
 }
 
-// Windows records runtime metrics at a given frequency within a given window and
+// Window records runtime metrics at a given frequency within a given window and
 // responds with a html table that lists the recorded metrics.
 func Window(ctx context.Context, opts WindowOpts) func(w http.ResponseWriter, r *http.Request) {
 	if opts.Window == time.Duration(0) {
@@ -125,7 +128,9 @@ func Window(ctx context.Context, opts WindowOpts) func(w http.ResponseWriter, r 
 	}
 }
 
+// WindowOpts configures the Window handler.
 type StreamOpts struct {
+	// Frequency defines at what frequency metrics are recorded and streamed.
 	Frequency time.Duration
 }
 
