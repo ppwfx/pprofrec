@@ -4,6 +4,10 @@ Provides a single pane of glass across all runtime metrics
 by recording `pprof` lookups, `runtime.MemStats` and `gopsutil` metrics
 to help understand the runtime behavior of an application
 
+## Motivation
+
+Be able to instrument, inspect and troubleshoot an application in an idiomatic, fast and boring way
+
 ## Demo
 
 Scroll on the x-axis to see more features, and on the y-axis to see more data points
