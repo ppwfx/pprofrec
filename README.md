@@ -1,3 +1,5 @@
+[![GoDoc](https://godoc.org/github.com/ppwfx/pprofrec?status.svg)](https://godoc.org/github.com/ppwfx/pprofrec)
+
 # pprofrec
 
 Provides a single pane of glass across all runtime metrics
