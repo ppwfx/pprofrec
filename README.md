@@ -10,7 +10,13 @@ Be able to instrument, inspect and troubleshoot an application in an idiomatic, 
 
 ## Demo
 
-Scroll on the x-axis to see more features, and on the y-axis to see more data points
+[Window Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/window)
+
+- Refresh to update the window
+
+- Scroll on the x-axis to see more features and on the y-axis to see more data points
+
+## Screenshot
 
 ![screenshot](https://storage.googleapis.com/media-0/screenshot.png)
 
