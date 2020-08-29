@@ -16,7 +16,7 @@ Scroll on the x-axis to see more features, and on the y-axis to see more data po
 
 ## Usage
 
-Records runtime metrics at a given frequency within a given window
+Record runtime metrics at a given frequency within a given window
 
 ```golang
 windowOpts := pprofrec.WindowOpts{
@@ -26,7 +26,7 @@ windowOpts := pprofrec.WindowOpts{
 mux.HandleFunc("/debug/pprof/window", pprofrec.Window(ctx, windowOpts))
 ```
 
-Streams runtime metrics at a given frequency
+Stream runtime metrics at a given frequency
 
 ```golang
 streamOpts := pprofrec.StreamOpts{
