@@ -71,7 +71,8 @@ func Window(ctx context.Context, opts WindowOpts) func(w http.ResponseWriter, r 
 	var rs []record
 	go func() {
 		max := int((opts.Window / opts.Frequency) + 1)
-		for range time.Tick(opts.Frequency) {
+		ticker := time.NewTicker(opts.Frequency)
+		for range ticker.C {
 			select {
 			case <-ctx.Done():
 				return
@@ -110,8 +111,6 @@ func Window(ctx context.Context, opts WindowOpts) func(w http.ResponseWriter, r 
 			if err != nil {
 				log.Printf("pprofrec: failed to write to response writer: %v", err.Error())
 			}
-
-			break
 		default:
 			err = writeRow(w, c, rs[0], rs[1])
 			if err != nil {
@@ -172,7 +171,8 @@ func Stream(opts StreamOpts) func(w http.ResponseWriter, r *http.Request) {
 
 		previous := getRecord(r.Context(), c, p)
 		var current record
-		for range time.Tick(opts.Frequency) {
+		ticker := time.NewTicker(opts.Frequency)
+		for range ticker.C {
 			select {
 			case <-r.Context().Done():
 				return
