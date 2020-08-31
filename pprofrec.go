@@ -130,7 +130,7 @@ func Window(ctx context.Context, opts WindowOpts) func(w http.ResponseWriter, r 
 	}
 }
 
-// StreamOpts configures the Window handler.
+// StreamOpts configures the Stream handler.
 type StreamOpts struct {
 	// Frequency defines at what frequency metrics are recorded and streamed.
 	Frequency time.Duration
