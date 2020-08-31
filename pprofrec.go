@@ -127,7 +127,7 @@ func Window(ctx context.Context, opts WindowOpts) func(w http.ResponseWriter, r 
 	}
 }
 
-// WindowOpts configures the Window handler.
+// StreamOpts configures the Window handler.
 type StreamOpts struct {
 	// Frequency defines at what frequency metrics are recorded and streamed.
 	Frequency time.Duration
@@ -405,7 +405,7 @@ func writeHead(w io.Writer, c capabilities) (err error) {
 	}
 
 	if c.cpuTimeStat {
-		err = writeProcessCpuTimesStatMetricsTHead(w)
+		err = writeProcessCPUTimesStatMetricsTHead(w)
 		if err != nil {
 			return
 		}
@@ -467,7 +467,7 @@ func writeProcessIOCountersStatMetricsTHead(w io.Writer) (err error) {
 	return
 }
 
-func writeProcessCpuTimesStatMetricsTHead(w io.Writer) (err error) {
+func writeProcessCPUTimesStatMetricsTHead(w io.Writer) (err error) {
 	_, err = w.Write([]byte(`<th colspan="2">.User</th>
 <th colspan="2">.System</th>
 <th colspan="2">.Idle</th>
@@ -549,7 +549,7 @@ func writeRow(w io.Writer, c capabilities, previous record, current record) (err
 	}
 
 	if c.cpuTimeStat {
-		err = writeCpuTimeStat(w, previous.cpuTimeStat, current.cpuTimeStat)
+		err = writeCPUTimeStat(w, previous.cpuTimeStat, current.cpuTimeStat)
 		if err != nil {
 			return
 		}
@@ -667,7 +667,7 @@ func writeIOCounterStat(w io.Writer, previous process.IOCountersStat, current pr
 	return
 }
 
-func writeCpuTimeStat(w io.Writer, previous cpu.TimesStat, current cpu.TimesStat) (err error) {
+func writeCPUTimeStat(w io.Writer, previous cpu.TimesStat, current cpu.TimesStat) (err error) {
 	err = writeDuration(w, time.Duration(current.User*float64(time.Second)), time.Duration((current.User-previous.User)*float64(time.Second)))
 	if err != nil {
 		return
