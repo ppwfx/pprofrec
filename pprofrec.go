@@ -1,3 +1,6 @@
+// Provides a single pane of glass across all runtime metrics.
+// pprofrec records pprof lookups, runtime.MemStats and gopsutil`metrics,
+// and exposes them via http endpoints to inspect and troubleshoot an application in an idiomatic, fast and boring way.
 package pprofrec
 
 import (
@@ -20,13 +23,13 @@ import (
 type record struct {
 	ts             time.Time
 	memStats       runtime.MemStats
-	pprofPair      pprofPair
+	pprofPair      pprofStat
 	cpuTimeStat    cpu.TimesStat
 	iOCounterStat  process.IOCountersStat
 	memoryInfoStat process.MemoryInfoStat
 }
 
-type pprofPair struct {
+type pprofStat struct {
 	goroutine    int
 	threadcreate int
 	heap         int
@@ -219,7 +222,7 @@ func getRecord(ctx context.Context, c capabilities, p *process.Process) (r recor
 	runtime.ReadMemStats(&ms)
 	r.memStats = ms
 
-	r.pprofPair = pprofPair{
+	r.pprofPair = pprofStat{
 		goroutine:    pprof.Lookup("goroutine").Count(),
 		threadcreate: pprof.Lookup("threadcreate").Count(),
 		heap:         pprof.Lookup("heap").Count(),
@@ -570,7 +573,7 @@ func writeRow(w io.Writer, c capabilities, previous record, current record) (err
 	return
 }
 
-func writePprof(w io.Writer, previous pprofPair, current pprofPair) (err error) {
+func writePprof(w io.Writer, previous pprofStat, current pprofStat) (err error) {
 	err = writeIntCol(w, current.goroutine, current.goroutine-previous.goroutine)
 	if err != nil {
 		return
