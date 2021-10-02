@@ -7,8 +7,7 @@ Provides a single pane of glass across all runtime metrics.
 `pprofrec` records `pprof` lookups, `runtime.MemStats` and `gopsutil` metrics,
 and exposes them via http endpoints to inspect and troubleshoot an application in an idiomatic, fast and boring way.
 
-[Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/window)
-- Refresh to update the window.
+[Demo](https://pprofrec-example-slzntuj6pq-uc.a.run.app/debug/pprof/stream)
 - Scroll on the x-axis to see more features and on the y-axis to see more data points.
 
 ## usage
